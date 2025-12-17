@@ -1,6 +1,6 @@
 # Social Support Application Workflow Automation (PoC)
 
-This repository contains a **Streamlit + LangGraph based prototype** that automates a government-style social support application workflow using **agentic AI** and **multimodal document processing**.
+This repository contains a **Streamlit + LangGraph-based prototype** that automates a government-style social support application workflow using **agentic AI** and **multimodal document processing**.
 
 The system ingests an application form and supporting documents, extracts structured data, validates inconsistencies, determines eligibility, produces a final decision, recommends economic enablement support, and provides an interactive chatbot to explain outcomes.
 
@@ -17,32 +17,12 @@ The system ingests an application form and supporting documents, extracts struct
   - NEEDS_REVIEW
   - SOFT_DECLINE
 - Economic enablement recommendations:
-  - Upskilling / training
+  - Upskilling/training
   - Job matching
   - Career / financial counseling
 - Decision summary (human-readable, 3–4 lines)
-- Interactive chatbot to ask questions about the decision
+- An interactive chatbot to ask questions about the decision
 - PostgreSQL persistence (relational + JSONB)
-
----
-
-## Expected Repository Structure
-├─ app.py
-├─ graph.py
-├─ llmclient.py
-├─ db.py
-├─ schema.sql
-├─ agents/
-│ ├─ extractionagent.py
-│ ├─ validationagent.py
-│ ├─ eligibilityagent.py
-│ ├─ decisionagent.py
-│ ├─ chatagent.py
-├─ requirements.txt
-├─ .env.example
-└─ data/
-└─ sample/
-
 
 ---
 
