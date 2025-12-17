@@ -1,0 +1,8 @@
+streamlit
+python-dotenv
+openai
+langgraph
+pydantic
+pandas
+PyPDF2
+pillow

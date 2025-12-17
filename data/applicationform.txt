@@ -1,0 +1,13 @@
+{
+  "application_id": "APP-001",
+  "applicant_name": "Shweta Shridhar Pawar",
+  "address": "Khalidiya, Abu Dhabi, UAE",
+  "family_size": 3,
+  "employment_status": "Employed",
+  "employer_name": "Private Sector",
+  "declared_monthly_income": 12000,
+  "support_type_requested": "Both",
+  "reason_for_support": "Short-term financial and upskilling support",
+  "consent_credit_check": true,
+  "consent_data_processing": true
+}

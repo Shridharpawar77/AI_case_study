@@ -1,0 +1,16 @@
+UAE Credit Bureau Report
+
+Applicant Name: Shweta Shridhar Pawar
+Report Date: 2025-11-28
+
+Credit Score: 635
+
+Active Loans:
+- Personal Loan: Outstanding AED 210,000
+- Car Loan: Outstanding AED 95,000
+- Credit Card Balance: AED 42,000
+
+Total Active Loans: 3
+Total Liabilities: AED 347,000
+
+Monthly EMI Obligations: AED 13,500

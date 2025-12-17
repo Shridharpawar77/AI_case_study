@@ -1,0 +1,27 @@
+HSBC UAE
+Account Statement
+
+Account Holder Name: Shweta Shridhar Pawar
+Account Number: 01234567890
+IBAN: AE12 3456 7890 1234 5678 901
+Statement Period: 2025-11-01 to 2025-11-30
+Currency: AED
+
+Opening Balance: 6,200.00
+
+Transactions:
+2025-11-01 SALARY CREDIT - XYZ TECHNOLOGIES LLC         +28,000.00
+2025-11-05 RENT PAYMENT                                -9,500.00
+2025-11-07 PERSONAL LOAN EMI                           -6,800.00
+2025-11-10 CREDIT CARD PAYMENT                         -4,200.00
+2025-11-15 SCHOOL FEES                                 -2,000.00
+2025-11-20 UTILITIES                                   -850.00
+
+Closing Balance: 10,850.00
+
+Summary:
+Total Credits: 28,000.00
+Total Debits: 23,350.00
+Average Monthly Balance: 11,000.00
+
+Employer (from salary narration): INNOVER CONSULTING LLC 

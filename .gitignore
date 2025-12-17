@@ -1,0 +1,67 @@
+# ------------------------
+# Python
+# ------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# ------------------------
+# Virtual Environments
+# ------------------------
+venv/
+.env/
+.env.*
+.venv/
+
+# ------------------------
+# OS / Editor
+# ------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ------------------------
+# Jupyter / ML
+# ------------------------
+.ipynb_checkpoints/
+*.h5
+*.ckpt
+*.pt
+*.pth
+*.onnx
+
+# ------------------------
+# Logs & temp
+# ------------------------
+logs/
+*.log
+tmp/
+.cache/
+
+# ------------------------
+# Secrets
+# ------------------------
+*.pem
+*.key
+*.crt
+*.p12
+*.json
+!*.example.json
+
+# ------------------------
+# Build / dist
+# ------------------------
+build/
+dist/
+*.egg-info/
+
+# ------------------------
+# Data (optional – uncomment if needed)
+# ------------------------
+# data/
+# *.csv
+# *.parquet
+ollama_requirements.txt
