@@ -1,66 +1,11 @@
-# from typing import TypedDict, Dict, Any
-# from langgraph.graph import StateGraph, END
-
-# from agents.ingestionagent import ingestion_agent
-# from agents.extractionagent import extraction_agent
-# from agents.validationagent import validation_agent
-# from agents.decisionagent import decision_agent
-
-
-# class AppState(TypedDict, total=False):
-#     model: str
-#     uploaded_docs: Dict[str, Any]          # {doc_type: {"filename":..., "text":...}}
-#     ingested_docs: Dict[str, Any]          # standardized
-#     extracted_docs: Dict[str, Any]         # {doc_type: extracted_json}
-#     validation: Dict[str, Any]
-#     decision: Dict[str, Any]
-
-
-# def node_ingest(state: AppState) -> AppState:
-#     state["ingested_docs"] = ingestion_agent(state["uploaded_docs"])
-#     return state
-
-# def node_extract(state: AppState) -> AppState:
-#     model = state.get("model", "gpt-4o")
-#     extracted = {}
-#     for doc_type, payload in state["ingested_docs"].items():
-#         extracted[doc_type] = extraction_agent(
-#             doc_type=doc_type,
-#             document_text=payload.get("document_text", ""),        )
-#     state["extracted_docs"] = extracted
-#     return state
-
-# def node_validate(state: AppState) -> AppState:
-#     state["validation"] = validation_agent(state["extracted_docs"])
-#     return state
-
-# def node_decide(state: AppState) -> AppState:
-#     model = state.get("model", "gpt-4o")
-#     state["decision"] = decision_agent(state["extracted_docs"], state["validation"], model=model)
-#     return state
-
-
-# def build_graph():
-#     g = StateGraph(AppState)
-#     g.add_node("ingest", node_ingest)
-#     g.add_node("extract", node_extract)
-#     g.add_node("validate", node_validate)
-#     g.add_node("decide", node_decide)
-
-#     g.set_entry_point("ingest")
-#     g.add_edge("ingest", "extract")
-#     g.add_edge("extract", "validate")
-#     g.add_edge("validate", "decide")
-#     g.add_edge("decide", END)
-#     return g.compile()
 from typing import TypedDict, Dict, Any
 from langgraph.graph import StateGraph, END
 
 from agents.ingestionagent import ingestion_agent
-from agents.extractionagent import extraction_agent
+from agents.extractionagent_ollama import extraction_agent
 from agents.validationagent import validation_agent
 from agents.eligibilityagent import eligibility_agent
-from agents.decisionagent import decision_agent
+from agents.decisionagent_ollama import decision_agent
 
 
 class AppState(TypedDict, total=False):

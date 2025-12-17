@@ -3,7 +3,7 @@ import re
 from typing import Any, Dict, List, Optional
 from llm.prompts import CHAT_PROMPT
 
-from llm.llmclient import client, DEPLOYMENT_NAME
+from llm.llmclient import client, MODEL_NAME  # Ollama (minicpm-v)
 
 
 # ----------------------------
@@ -221,8 +221,8 @@ def chat_agent(
     mode: "short" | "detailed" | "audit"
     """
 
-    if not DEPLOYMENT_NAME:
-        return "Configuration error: AZURE_OPENAI_DEPLOYMENT is missing."
+    if not MODEL_NAME:
+        return "Configuration error: OLLAMA_MODEL is missing."
 
     question = _clean_whitespace(question)
     if not question:
@@ -279,10 +279,10 @@ def chat_agent(
     if isinstance(conf, (int, float)) and conf < 0.5:
         temperature = 0.0  # reduce creativity
 
-    resp = client.chat.completions.create(
-        model=DEPLOYMENT_NAME,
+        # Ollama chat (minicpm-v). llmclient wraps /api/chat and returns assistant text.
+    answer = client.chat_text(
         messages=messages,
         temperature=temperature,
     )
 
-    return (resp.choices[0].message.content or "").strip()
+    return (answer or "").strip()

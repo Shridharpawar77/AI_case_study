@@ -26,26 +26,6 @@ The system ingests an application form and supporting documents, extracts struct
 
 ---
 
-## Expected Repository Structure
-├─ app.py
-├─ graph.py
-├─ llmclient.py
-├─ db.py
-├─ schema.sql
-├─ agents/
-│ ├─ extractionagent.py
-│ ├─ validationagent.py
-│ ├─ eligibilityagent.py
-│ ├─ decisionagent.py
-│ ├─ chatagent.py
-├─ requirements.txt
-├─ .env.example
-└─ data/
-└─ sample/
-
-
----
-
 ## Prerequisites
 
 - Python **3.10+** (recommended: 3.11)

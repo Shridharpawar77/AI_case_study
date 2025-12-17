@@ -28,40 +28,6 @@ Document Content (for text docs only):
 {document_text}
 """
 
-# DECISION_PROMPT = """
-# You are a Decision Recommendation Agent for a government social support application.
-
-# You will receive:
-# - extracted_data (structured fields from documents)
-# - validation_issues (list of issues)
-# Your job:
-# - Provide a decision: APPROVE, NEEDS_REVIEW, or SOFT_DECLINE
-# - Provide confidence score (0 to 1)
-# - Provide reasons and next_steps
-# Rules:
-# - If any HIGH severity issue exists OR critical fields are missing → NEEDS_REVIEW (unless severe risk → SOFT_DECLINE)
-# - If income is high and liabilities high → SOFT_DECLINE
-# - If all checks pass and applicant seems eligible → APPROVE
-
-# If eligibility_signal.eligibility_status == "LIKELY_INELIGIBLE", decision must be SOFT_DECLINE or NEEDS_REVIEW, not APPROVE.
-
-# Return STRICT JSON only in this format:
-
-# {{
-#   "application_id": "<id or null>",
-#   "decision": "APPROVE|NEEDS_REVIEW|SOFT_DECLINE",
-#   "confidence": <number>,
-#   "reasons": ["..."],
-#   "next_steps": ["..."]
-# }}
-
-# Input:
-# extracted_data = {extracted_data}
-# validation_issues = {validation_issues}
-
-# Return raw JSON only. Do not wrap in ``` or add any markdown.
-# """
-
 DECISION_PROMPT = """
 You are a Decision Recommendation Agent for a government social support application.
 
@@ -110,17 +76,6 @@ eligibility_signal = {eligibility_signal}
 Return raw JSON only. Do not wrap in ``` or add any markdown.
 """
 
-
-
-# CHAT_PROMPT = """
-# You are a helpful case officer assistant. Use ONLY the provided structured data and decision output.
-# Answer the user's question briefly and clearly. Do not invent new facts.
-
-# structured_data = {structured_data}
-# decision_output = {decision_output}
-
-# User question: {question}
-# """.strip()
 
 CHAT_PROMPT = """
 You are a government case-officer assistant helping with a social support application.
