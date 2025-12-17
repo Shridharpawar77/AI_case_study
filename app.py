@@ -337,7 +337,6 @@ def save_to_db_or_warn(out: dict):
 # ----------------------------
 # Main
 # ----------------------------
-
 def main():
     load_dotenv()
     init_session_state()

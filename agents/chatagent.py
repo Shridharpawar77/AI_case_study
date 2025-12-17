@@ -1,34 +1,9 @@
-# import json
-# from typing import Dict, Any
-
-# from llmclient import client, DEPLOYMENT_NAME
-# from prompts import CHAT_PROMPT
-
-# def chat_agent(structured_data: Dict[str, Any], decision_output: Dict[str, Any], question: str) -> str:
-#     assert DEPLOYMENT_NAME, "AZURE_OPENAI_DEPLOYMENT missing"
-
-#     prompt = CHAT_PROMPT.format(
-#         structured_data=json.dumps(structured_data, ensure_ascii=False),
-#         decision_output=json.dumps(decision_output, ensure_ascii=False),
-#         question=question
-#     )
-
-#     resp = client.chat.completions.create(
-#         model=DEPLOYMENT_NAME,
-#         messages=[{"role": "user", "content": prompt}],
-#         temperature=0.2
-#     )
-#     return resp.choices[0].message.content.strip()
-
-
-# from __future__ import annotations
-
 import json
 import re
 from typing import Any, Dict, List, Optional
-from prompts import CHAT_PROMPT
+from llm.prompts import CHAT_PROMPT
 
-from llmclient import client, DEPLOYMENT_NAME
+from llm.llmclient import client, DEPLOYMENT_NAME
 
 
 # ----------------------------

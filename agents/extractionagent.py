@@ -2,9 +2,9 @@ import json
 import base64
 from typing import Dict, Any
 
-from llmclient import client, DEPLOYMENT_NAME
-from schemas import DOCUMENT_SCHEMAS
-from prompts import EXTRACTION_PROMPT
+from llm.llmclient import client, DEPLOYMENT_NAME
+from llm.schemas import DOCUMENT_SCHEMAS
+from llm.prompts import EXTRACTION_PROMPT
 from jsonsanitizer import parse_json_loose
 
 
