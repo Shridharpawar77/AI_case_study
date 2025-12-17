@@ -1,8 +1,39 @@
-streamlit
-python-dotenv
-openai
-langgraph
-pydantic
-pandas
-PyPDF2
-pillow
+# -----------------------------
+# Core UI
+# -----------------------------
+streamlit>=1.32.0
+
+# -----------------------------
+# Agent orchestration
+# -----------------------------
+langgraph>=0.2.0
+langchain>=0.2.0
+langchain-core>=0.2.0
+
+# -----------------------------
+# OpenAI / Azure OpenAI
+# -----------------------------
+openai>=1.30.0
+tiktoken>=0.7.0
+
+# -----------------------------
+# Environment & utilities
+# -----------------------------
+python-dotenv>=1.0.1
+pydantic>=2.7.0
+
+# -----------------------------
+# Database (PostgreSQL)
+# -----------------------------
+psycopg[binary]>=3.1.18
+
+# -----------------------------
+# Document & image handling
+# -----------------------------
+pillow>=10.2.0
+pdfplumber>=0.11.0
+
+# -----------------------------
+# JSON / validation helpers
+# -----------------------------
+jsonschema>=4.22.0
