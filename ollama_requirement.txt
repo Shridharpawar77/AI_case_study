@@ -1,2 +1,0 @@
-I would like to shift the entire flow to use ollama based minicpm-v model, as this is what is mentioned in the attached problem statement, what do you think how many days it will take to shift everything to ollama based approach?
-also I have to
