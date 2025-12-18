@@ -2,6 +2,7 @@ import json
 from typing import Dict, Any
 
 from llm.llmclient import client, DEPLOYMENT_NAME
+from llm.llmlangfuse import chat_text, DEPLOYMENT_NAME
 from llm.prompts import DECISION_PROMPT
 
 def decision_agent(extracted_docs: Dict[str, Any], validation: Dict[str, Any], eligibility_signal: Dict[str, Any]) -> Dict[str, Any]:
@@ -15,13 +16,24 @@ def decision_agent(extracted_docs: Dict[str, Any], validation: Dict[str, Any], e
         eligibility_signal=json.dumps(eligibility_signal, ensure_ascii=False),
     )
 
-    resp = client.chat.completions.create(
-        model=DEPLOYMENT_NAME,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0,
-    )
+    # resp = client.chat.completions.create(
+    #     model=DEPLOYMENT_NAME,
+    #     messages=[{"role": "user", "content": prompt}],
+    #     temperature=0,
+    # )
 
-    raw = resp.choices[0].message.content
+    # raw = resp.choices[0].message.content
+
+    raw = chat_text(
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.0,
+        trace_id=app_id,
+        span_name="DecisionAgent",
+        metadata={
+            "stage": "decision",
+            "issues_count": len(validation.get("issues", []) or []),
+        },
+    )
     try:
         #out = json.loads(raw)
         from jsonsanitizer import parse_json_loose

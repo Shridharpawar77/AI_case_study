@@ -2,9 +2,9 @@ import json
 import re
 from typing import Any, Dict, List, Optional
 from llm.prompts import CHAT_PROMPT
+from llm.llmlangfuse import chat_text, DEPLOYMENT_NAME
 
 from llm.llmclient import client, DEPLOYMENT_NAME
-
 
 # ----------------------------
 # Helpers
@@ -279,10 +279,18 @@ def chat_agent(
     if isinstance(conf, (int, float)) and conf < 0.5:
         temperature = 0.0  # reduce creativity
 
-    resp = client.chat.completions.create(
-        model=DEPLOYMENT_NAME,
+    # resp = client.chat.completions.create(
+    #     model=DEPLOYMENT_NAME,
+    #     messages=messages,
+    #     temperature=temperature,
+    # )
+    # return (resp.choices[0].message.content or "").strip()
+    answer = chat_text(
         messages=messages,
-        temperature=temperature,
+        temperature=0.2,
+        trace_id=application_id,
+        span_name="ChatAgent",
+        metadata={"stage": "chat"},
     )
-
-    return (resp.choices[0].message.content or "").strip()
+    return {"answer": answer}
+    
